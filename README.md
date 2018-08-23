@@ -14,4 +14,4 @@ P.S. Stop button can stop the process in the webbbrowser (and restart by clickin
 
 ## Portable exe file
 
-Download the [files](https://github.com/Tony-Liou/Autopick4NDHU/tree/master/Autopick4NDHU/bin/Release) and you can use it without setup on your computer. 
+Download the [files](Autopick4NDHU/bin/Release) and you can use it without setup on your computer. 
