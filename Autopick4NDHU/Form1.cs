@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -15,6 +16,9 @@ namespace Autopick4NDHU
         private static readonly string[] sfVal = { "XGYMA壽館場A-籃球", "XGMB1壽館場B-羽1", "XGMB2壽館場B-羽2", "XGMB3壽館場B-羽3",
             "XGMB4壽館場B-羽4", "XGMC1壽館場C-排1", "XGMC2壽館場C-排2", "XGMC3壽館場C-排3", "XGMC4壽館場C-排4" };
         WbsControl wbsControl;
+        ToolTip tip;
+        private bool stop;
+        private bool isSaved;
         private bool isBooked;
         private bool isFinished;
 
@@ -25,11 +29,19 @@ namespace Autopick4NDHU
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Turn off validation when a control loses focus. This will be inherited by child
+            // controls on the form, enabling us to validate the entire form when the 
+            // button is clicked instead of one control at a time.
+            this.AutoValidate = AutoValidate.Disable;
+
+            txtAcct.Text = Properties.Settings.Default.StudentIDSetting;
+            txtPwd.Text = Properties.Settings.Default.PasswordSetting;
+
             // DateTimePicker
             dtpDate.Format = DateTimePickerFormat.Custom;
             dtpDate.CustomFormat = "yyyy/MM/dd";
-            dtpDate.MinDate = DateTime.Today.AddDays(7);
-            dtpDate.MaxDate = dtpDate.MinDate.AddDays(7);
+            dtpDate.MinDate = DateTime.Today.AddDays(6);
+            dtpDate.MaxDate = dtpDate.MinDate.AddDays(6);
 
             // Start hour combobox
             for(int i = 6; i < 23; ++i)
@@ -39,6 +51,7 @@ namespace Autopick4NDHU
             cmbStartHour.DisplayMember = "Text";
             cmbStartHour.ValueMember = "Value";
             cmbStartHour.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbStartHour.SelectedIndex = -1;
 
             // End hour combobox
             cmbEndHour.DisplayMember = "Text";
@@ -53,11 +66,29 @@ namespace Autopick4NDHU
             cmbSportFields.DisplayMember = "Text";
             cmbSportFields.ValueMember = "Value";
             cmbSportFields.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSportFields.SelectedIndex = -1;
 
             wbsControl = new WbsControl(webBrowser1);
-            webBrowser1.Visible = false;
 
-            isBooked = isFinished = false;
+            // Create a tooltip
+            tip = new ToolTip();
+
+            // Set up the delays for the ToolTip.
+            tip.AutoPopDelay = 5000;
+            tip.InitialDelay = 1000;
+            tip.ReshowDelay = 500;
+            // Force the ToolTip text to be displayed whether or not the form is active.
+            tip.ShowAlways = true;
+
+            // Set up the ToolTip text for the Button and Checkbox.
+            tip.SetToolTip(cmbStartHour, "Start hour");
+            tip.SetToolTip(cmbEndHour, "End hour");
+            tip.SetToolTip(txtShowInfo, "Show the state");
+            tip.SetToolTip(btnSave, "Save the user input");
+            tip.SetToolTip(btnNav, "Go to the target website and start processing");
+            tip.SetToolTip(btnStop, "Stop the process of webbrowser");
+
+            stop = isSaved = isBooked = isFinished = false;
         }
 
         private ComboItem SFSplit(string str)
@@ -67,44 +98,54 @@ namespace Autopick4NDHU
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            if (!isSaved || stop)
+            {
+                txtShowInfo.Text = "Negative";
+                return;
+            }
+                
             if(e.Url.ToString() == Global.MAIN_URL)
             {
                 if(wbsControl.isLogin())
                 {
-                    if (isFinished)
+                    if (isFinished) // Entire process is done
+                    {
+                        txtShowInfo.Text = "Booking is done perfectly!!!";
                         return;
+                    }
+                        
                     if(wbsControl.isOnReqPage())
                     {
                         if(isBooked)
                         {
+                            txtShowInfo.Text = "Filling the rent reason textbox";
                             wbsControl.FillReason();
                             isFinished = true;
                         }
                         else
                         {
+                            txtShowInfo.Text = "Searching the target (sport field)";
                             wbsControl.BookField();
                             isBooked = true;
                         }
                     }
-                    else
+                    else // Click and go to the request page
                     {
+                        txtShowInfo.Text = "Going to application page";
                         wbsControl.getById("MainContent_Button2").InvokeMember("click");
                     }
                 }
                 else
                 {
+                    txtShowInfo.Text = "Navigating to the login page";
                     webBrowser1.Navigate(Global.LOGIN_URL);
                 }
             }
             else if(e.Url.ToString() == Global.LOGIN_URL)
             {
+                txtShowInfo.Text = "Filling in the id and pwd";
                 wbsControl.Login();
             }
-        }
-
-        private void btnToggleWeb_Click(object sender, EventArgs e)
-        {
-            webBrowser1.Visible = (webBrowser1.Visible?false:true);
         }
 
         private void cmbStartHour_SelectedIndexChanged(object sender, EventArgs e)
@@ -115,8 +156,7 @@ namespace Autopick4NDHU
             int n = Int32.Parse(sh.Text);
             if (n < 23)
             {
-                cmbEndHour.Items.Add(new ComboItem { Text = (n + 1).ToString(), Value = (n+1).ToString()});
-                
+                cmbEndHour.Items.Add(new ComboItem { Text = (n + 1).ToString(), Value = (n + 1).ToString() });
             }
             if (n < 22)
             {
@@ -127,6 +167,12 @@ namespace Autopick4NDHU
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(!this.ValidateChildren())
+            {
+                MessageBox.Show("Input incorrectly");
+                return;
+            }
+
             wbsControl.Acct = txtAcct.Text;
             wbsControl.Pwd = txtPwd.Text;
             wbsControl.SFValue = ((ComboItem)cmbSportFields.SelectedItem).Value;
@@ -135,28 +181,68 @@ namespace Autopick4NDHU
 
             txtShowInfo.Text = "ID: " + txtAcct.Text +
                 "\r\nPassword: " + txtPwd.Text +
-                "\r\nSport fields: " + cmbSportFields.Text + cmbSportFields.SelectedItem.ToString() +
+                "\r\nSport fields: " + cmbSportFields.Text +
                 "\r\nDate: " + dtpDate.Text +
                 "\r\nHour: " + cmbStartHour.Text + "~" + cmbEndHour.Text;
+
+            isSaved = true;
         }
 
         private void txtAcct_Validating(object sender, CancelEventArgs e)
         {
             TextBox txt = sender as TextBox;
+            string errMsg = "";
 
-            if(txt.Text.Length != 9)
+            if (txt.Text.Length != 9)
             {
-                errAct.SetError(txtAcct, "The length of the string is not 10.");
+                errMsg = "The length of the string is not 10.";
+                e.Cancel = true;
             }
-            if(!Int64.TryParse(txt.Text, out var rlt))
+            else if(!Int64.TryParse(txt.Text, out var rlt))
             {
-                errAct.SetError(txtAcct, "Please enter digits");
+                errMsg = "Please enter digits";
+                e.Cancel = true;
             }
+            else
+            {
+                e.Cancel = false;
+            }
+                
+            errAcct.SetError(txtAcct, errMsg);
         }
 
         private void btnNav_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(Global.MAIN_URL);
+            stop = false;
+        }
+
+        private void cmb_Validating(object sender, CancelEventArgs e)
+        {
+            ComboBox cmb = sender as ComboBox;
+            if (cmb.SelectedIndex == -1)
+            {
+                e.Cancel = true;
+                errCmb.SetError(cmb, "Please select an option.");
+            }
+            else
+            {
+                e.Cancel = false;
+                errCmb.SetError(cmb, "");
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // Save StudentID and password to ApplicationSettings
+            Properties.Settings.Default.StudentIDSetting = txtAcct.Text;
+            Properties.Settings.Default.PasswordSetting = txtPwd.Text;
+            Properties.Settings.Default.Save();
+        }
+
+        private void btnStop_Click(object sender, EventArgs e)
+        {
+            stop = true;
         }
     }
 
@@ -171,7 +257,7 @@ namespace Autopick4NDHU
         public string reason = "Reason";
         private int count = 0;
 
-        WebBrowser Wbs { get; set; }
+        public WebBrowser Wbs { get; set; }
 
         public string Acct { get; set; }
         public string Pwd { get; set; }
@@ -206,7 +292,7 @@ namespace Autopick4NDHU
         public void Login()
         {
             getById("MainContent_TextBox1").InnerText = Acct;//SetAttribute("value", Acct);
-            getById("MainContent_TextBox2").SetAttribute("value", Pwd);
+            getById("MainContent_TextBox2").InnerText = Pwd;
             getById("MainContent_Button1").InvokeMember("click");
         }
 
