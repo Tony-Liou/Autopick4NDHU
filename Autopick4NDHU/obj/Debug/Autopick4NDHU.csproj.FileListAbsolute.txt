@@ -12,3 +12,4 @@ C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\bin\Debug\Autopick4NDHU.exe
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\bin\Debug\Autopick4NDHU.application
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.exe.manifest
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.application
+C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.FormSettings.resources

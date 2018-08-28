@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Autopick4NDHU.exe.manifest" size="4131">
+    <dependentAssembly dependencyType="install" codebase="Autopick4NDHU.exe.manifest" size="3662">
       <assemblyIdentity name="Autopick4NDHU.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="zh-TW" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bt1jo7kP5sDIiOzUdWH+jgvGBAf4DMsl003YEe9/hj8=</dsig:DigestValue>
+        <dsig:DigestValue>dMAbV0MsUCxH2S+0gtZGVul+q3O5Xv3mrxLk5017dds=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

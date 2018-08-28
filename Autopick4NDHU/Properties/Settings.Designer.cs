@@ -46,5 +46,29 @@ namespace Autopick4NDHU.Properties {
                 this["PasswordSetting"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RmbStudentID {
+            get {
+                return ((bool)(this["RmbStudentID"]));
+            }
+            set {
+                this["RmbStudentID"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool RmbPassword {
+            get {
+                return ((bool)(this["RmbPassword"]));
+            }
+            set {
+                this["RmbPassword"] = value;
+            }
+        }
     }
 }

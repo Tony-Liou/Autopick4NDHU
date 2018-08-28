@@ -51,15 +51,24 @@
             this.errCmb = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.cmsIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.OptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.偏好設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errAcct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCmb)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.cmsIcon.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnNav
             // 
-            this.btnNav.Location = new System.Drawing.Point(93, 380);
+            this.btnNav.Location = new System.Drawing.Point(91, 395);
             this.btnNav.Name = "btnNav";
             this.btnNav.Size = new System.Drawing.Size(75, 23);
             this.btnNav.TabIndex = 0;
@@ -96,14 +105,12 @@
             // 
             // webBrowser1
             // 
-            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.webBrowser1.Location = new System.Drawing.Point(382, 12);
+            this.webBrowser1.Location = new System.Drawing.Point(382, 27);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(406, 426);
+            this.webBrowser1.Size = new System.Drawing.Size(406, 411);
             this.webBrowser1.TabIndex = 4;
+            this.webBrowser1.TabStop = false;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // lblHour
@@ -117,7 +124,7 @@
             // 
             // btnStop
             // 
-            this.btnStop.Location = new System.Drawing.Point(174, 380);
+            this.btnStop.Location = new System.Drawing.Point(172, 395);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
             this.btnStop.TabIndex = 6;
@@ -188,7 +195,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(12, 380);
+            this.btnSave.Location = new System.Drawing.Point(10, 395);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
             this.btnSave.TabIndex = 13;
@@ -198,7 +205,7 @@
             // 
             // txtShowInfo
             // 
-            this.txtShowInfo.Location = new System.Drawing.Point(14, 290);
+            this.txtShowInfo.Location = new System.Drawing.Point(12, 305);
             this.txtShowInfo.Multiline = true;
             this.txtShowInfo.Name = "txtShowInfo";
             this.txtShowInfo.ReadOnly = true;
@@ -228,7 +235,7 @@
             this.groupBox1.Controls.Add(this.txtAcct);
             this.groupBox1.Controls.Add(this.lblPwd);
             this.groupBox1.Controls.Add(this.txtPwd);
-            this.groupBox1.Location = new System.Drawing.Point(14, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(223, 85);
             this.groupBox1.TabIndex = 16;
@@ -245,18 +252,75 @@
             this.groupBox2.Controls.Add(this.cmbStartHour);
             this.groupBox2.Controls.Add(this.lblFields);
             this.groupBox2.Controls.Add(this.cmbEndHour);
-            this.groupBox2.Location = new System.Drawing.Point(14, 103);
+            this.groupBox2.Location = new System.Drawing.Point(12, 118);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(238, 122);
             this.groupBox2.TabIndex = 17;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "借用資訊";
             // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.cmsIcon;
+            this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
+            this.notifyIcon1.Text = "Auto Pick";
+            this.notifyIcon1.Visible = true;
+            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            // 
+            // cmsIcon
+            // 
+            this.cmsIcon.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.cmsIcon.Name = "contextMenuStrip1";
+            this.cmsIcon.Size = new System.Drawing.Size(95, 26);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.OptionToolStripMenuItem,
+            this.HelpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.TabIndex = 18;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // OptionToolStripMenuItem
+            // 
+            this.OptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.偏好設定ToolStripMenuItem});
+            this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
+            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.OptionToolStripMenuItem.Text = "選項";
+            // 
+            // 偏好設定ToolStripMenuItem
+            // 
+            this.偏好設定ToolStripMenuItem.Name = "偏好設定ToolStripMenuItem";
+            this.偏好設定ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.偏好設定ToolStripMenuItem.Text = "偏好設定";
+            this.偏好設定ToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
+            // 
+            // HelpToolStripMenuItem
+            // 
+            this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
+            this.HelpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.HelpToolStripMenuItem.Text = "說明";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtShowInfo);
@@ -265,6 +329,7 @@
             this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.btnNav);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Auto Pick";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -275,6 +340,9 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.cmsIcon.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -303,6 +371,13 @@
         private System.Windows.Forms.ErrorProvider errCmb;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip cmsIcon;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 偏好設定ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
     }
 }
 
