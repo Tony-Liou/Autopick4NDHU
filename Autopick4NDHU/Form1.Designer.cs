@@ -265,8 +265,8 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Auto Pick";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_BalloonTipClicked);
-            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_DoubleClick);
+            this.notifyIcon1.Click += new System.EventHandler(this.notifyIcon1_Clicked);
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_Clicked);
             // 
             // cmsIcon
             // 

@@ -26,19 +26,21 @@ namespace Autopick4NDHU
             dtpStartup.ShowUpDown = true;
             dtpStartup.MinDate = DateTime.Parse("23:50:00");
             dtpStartup.MaxDate = DateTime.Parse("23:59:59");
-            dtpStartup.Value = DateTime.Parse("23:50:00");
+            dtpStartup.Value = DateTime.Parse(Properties.Settings.Default.StartupTime);
 
             dtpLogin.Format = DateTimePickerFormat.Time;
             dtpLogin.ShowUpDown = true;
             dtpLogin.MinDate = DateTime.Parse("23:57:00");
             dtpLogin.MaxDate = DateTime.Parse("23:59:59");
-            dtpLogin.Value = DateTime.Parse("23:58:30");
+            dtpLogin.Value = DateTime.Parse(Properties.Settings.Default.LoginTime);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             Properties.Settings.Default.RmbStudentID = chkRmbAcct.Checked;
             Properties.Settings.Default.RmbPassword = chkRmbPwd.Checked;
+            Properties.Settings.Default.StartupTime = dtpStartup.Value.TimeOfDay.ToString();
+            Properties.Settings.Default.LoginTime = dtpLogin.Value.TimeOfDay.ToString();
             this.Close();
         }
 

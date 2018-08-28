@@ -44,24 +44,24 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autopick4NDHU.exe" size="131024">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autopick4NDHU.exe" size="132048">
       <assemblyIdentity name="Autopick4NDHU" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>uee2sXu8B9PSqgs+BVp89QNGdvZEqJCFryWZOBDbYzY=</dsig:DigestValue>
+        <dsig:DigestValue>yHsn/7MZCJ2KBVW75bYlqnWmHlE0/aoM/h7EHVkcjOc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Autopick4NDHU.exe.config" size="1489">
+  <file name="Autopick4NDHU.exe.config" size="1862">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>d3/yFfylxabd93KA4KEWT5ZlSp4N9IMEF992Mbw6tKk=</dsig:DigestValue>
+      <dsig:DigestValue>YtzAqxna8Hmm6WLa7PBFKaP3uSFk/YtlGsPnj46CvaI=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

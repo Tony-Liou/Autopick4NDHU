@@ -14,5 +14,14 @@
     <Setting Name="RmbPassword" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
+    <Setting Name="StartupTime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">23:50:00</Value>
+    </Setting>
+    <Setting Name="LoginTime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">23:58:30</Value>
+    </Setting>
+    <Setting Name="TimeTick" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">10</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

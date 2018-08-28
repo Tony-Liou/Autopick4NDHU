@@ -21,6 +21,7 @@ namespace Autopick4NDHU
         private bool isSaved; // Clicked save button
         private bool isBooked; // Booked the sport field
         private bool isFinished; // Submitted the request website
+        System.Timers.Timer timer;
 
         public Form1()
         {
@@ -256,21 +257,17 @@ namespace Autopick4NDHU
             if (Properties.Settings.Default.RmbPassword)
                 Properties.Settings.Default.PasswordSetting = txtPwd.Text;
             Properties.Settings.Default.Save();
+
+            timer = new System.Timers.Timer(Properties.Settings.Default.TimeTick * 1000);
+            timer.AutoReset = false;
+            timer.Elapsed += new System.Timers.ElapsedEventHandler(ShowForm);
+            timer.SynchronizingObject = this; // Back to the main thread when time up
+            timer.Start();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
             stop = true;
-        }
-
-        private void notifyIcon1_BalloonTipClicked(object sender, EventArgs e)
-        {
-            ShowForm();
-        }
-
-        private void notifyIcon1_DoubleClick(object sender, EventArgs e)
-        {
-            ShowForm();
         }
 
         private void ShowForm()
@@ -283,6 +280,18 @@ namespace Autopick4NDHU
             // Activate the form.
             this.Activate();
             this.Focus();
+        }
+
+        private void ShowForm(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            if (WindowState == FormWindowState.Minimized) // if this window is minimized
+            {
+                Show();
+                WindowState = FormWindowState.Normal;
+            }
+            this.Activate();
+            this.Focus();
+            timer.Stop();
         }
 
         /// <summary>
@@ -298,6 +307,11 @@ namespace Autopick4NDHU
         {
             FormSettings form = new FormSettings();
             form.ShowDialog();
+        }
+
+        private void notifyIcon1_Clicked(object sender, EventArgs e)
+        {
+            ShowForm();
         }
     }
 

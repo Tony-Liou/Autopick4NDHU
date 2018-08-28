@@ -70,5 +70,41 @@ namespace Autopick4NDHU.Properties {
                 this["RmbPassword"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("23:50:00")]
+        public string StartupTime {
+            get {
+                return ((string)(this["StartupTime"]));
+            }
+            set {
+                this["StartupTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("23:58:30")]
+        public string LoginTime {
+            get {
+                return ((string)(this["LoginTime"]));
+            }
+            set {
+                this["LoginTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int TimeTick {
+            get {
+                return ((int)(this["TimeTick"]));
+            }
+            set {
+                this["TimeTick"] = value;
+            }
+        }
     }
 }
