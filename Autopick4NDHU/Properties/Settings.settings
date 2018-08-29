@@ -20,8 +20,14 @@
     <Setting Name="LoginTime" Type="System.String" Scope="User">
       <Value Profile="(Default)">23:58:30</Value>
     </Setting>
-    <Setting Name="TimeTick" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">10</Value>
+    <Setting Name="TestTime" Type="System.String" Scope="User">
+      <Value Profile="(Default)">22:16:00</Value>
+    </Setting>
+    <Setting Name="AutoStartup" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="AutoBook" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

@@ -97,13 +97,37 @@ namespace Autopick4NDHU.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("10")]
-        public int TimeTick {
+        [global::System.Configuration.DefaultSettingValueAttribute("22:16:00")]
+        public string TestTime {
             get {
-                return ((int)(this["TimeTick"]));
+                return ((string)(this["TestTime"]));
             }
             set {
-                this["TimeTick"] = value;
+                this["TestTime"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoStartup {
+            get {
+                return ((bool)(this["AutoStartup"]));
+            }
+            set {
+                this["AutoStartup"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool AutoBook {
+            get {
+                return ((bool)(this["AutoBook"]));
+            }
+            set {
+                this["AutoBook"] = value;
             }
         }
     }

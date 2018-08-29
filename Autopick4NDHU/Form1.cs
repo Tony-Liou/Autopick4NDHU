@@ -21,7 +21,7 @@ namespace Autopick4NDHU
         private bool isSaved; // Clicked save button
         private bool isBooked; // Booked the sport field
         private bool isFinished; // Submitted the request website
-        System.Timers.Timer timer;
+        System.Timers.Timer startupTimer, autorunTimer;
 
         public Form1()
         {
@@ -90,6 +90,9 @@ namespace Autopick4NDHU
             tip.SetToolTip(btnSave, "Save the user input");
             tip.SetToolTip(btnNav, "Go to the target website and start processing");
             tip.SetToolTip(btnStop, "Stop the process of webbrowser");
+
+            startupTimer = new System.Timers.Timer();
+            autorunTimer = new System.Timers.Timer();
 
             stop = isSaved = isBooked = isFinished = false;
         }
@@ -248,8 +251,9 @@ namespace Autopick4NDHU
                 this.WindowState = FormWindowState.Minimized;
                 notifyIcon1.Tag = string.Empty;
                 notifyIcon1.ShowBalloonTip(3000, this.Text,
-                     "程式並未結束，欲結束請在圖示上按右鍵，選取結束功能!",
+                     "程式並未結束，欲結束請在圖示上按右鍵，選取結束選項",
                      ToolTipIcon.Info);
+                this.Hide();
             }
             // Save StudentID and password to ApplicationSettings
             if (Properties.Settings.Default.RmbStudentID)
@@ -258,11 +262,16 @@ namespace Autopick4NDHU
                 Properties.Settings.Default.PasswordSetting = txtPwd.Text;
             Properties.Settings.Default.Save();
 
-            timer = new System.Timers.Timer(Properties.Settings.Default.TimeTick * 1000);
-            timer.AutoReset = false;
-            timer.Elapsed += new System.Timers.ElapsedEventHandler(ShowForm);
-            timer.SynchronizingObject = this; // Back to the main thread when time up
-            timer.Start();
+            InitStartupCountdown();
+        }
+
+        private void InitStartupCountdown()
+        {
+            startupTimer.AutoReset = false;
+            startupTimer.Elapsed += new System.Timers.ElapsedEventHandler(ShowForm);
+            startupTimer.SynchronizingObject = this; // Back to the main thread when time is up
+            startupTimer.Interval = DateTime.Parse(Properties.Settings.Default.TestTime).Subtract(DateTime.Now).TotalMilliseconds; // less than 24 days
+            startupTimer.Start();
         }
 
         private void btnStop_Click(object sender, EventArgs e)
@@ -282,8 +291,14 @@ namespace Autopick4NDHU
             this.Focus();
         }
 
+        /// <summary>
+        /// Used for  thread to show this form when time is up
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ShowForm(object sender, System.Timers.ElapsedEventArgs e)
         {
+            notifyIcon1.ShowBalloonTip(1000, "時間到", "即將開啟程式", ToolTipIcon.Info);
             if (WindowState == FormWindowState.Minimized) // if this window is minimized
             {
                 Show();
@@ -291,11 +306,11 @@ namespace Autopick4NDHU
             }
             this.Activate();
             this.Focus();
-            timer.Stop();
+            startupTimer.Stop();
         }
 
         /// <summary>
-        /// End the window
+        /// Context menu strip's End the window
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -303,10 +318,19 @@ namespace Autopick4NDHU
             Application.Exit();
         }
 
+        /// <summary>
+        /// Open setting form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SettingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSettings form = new FormSettings();
-            form.ShowDialog();
+            if(form.ShowDialog() == DialogResult.OK)
+            {
+                Properties.Settings.Default.Reload();
+                MessageBox.Show("Saved");
+            }
         }
 
         private void notifyIcon1_Clicked(object sender, EventArgs e)
