@@ -44,14 +44,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Auto Pick.exe" size="140240">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Auto Pick.exe" size="141264">
       <assemblyIdentity name="Auto Pick" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>MTTf1dUReXxk5gCBXXmaat+mWRTv4eHKCt65Luw5xEc=</dsig:DigestValue>
+        <dsig:DigestValue>DvWmsy5zfQMoqXx+NqigmlocBDfwvV/ArntqKyRKzZQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -62,6 +62,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>6IRC51sm/MQZmZDK+a0A1/gq0dFEpxRoz4HKg+lwM1w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Manual\Manual.html" size="2621">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nZzIKKA3lDkV0dQ04Vpxw9zNX9v2i0f4AcMZ0i+kA+U=</dsig:DigestValue>
     </hash>
   </file>
   <file name="NDHU_logo_32.ico" size="4286">

@@ -397,6 +397,33 @@ namespace Autopick4NDHU
             }
         }
 
+        private void ManualToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, helpProvider1.HelpNamespace);
+        }
+
+        private void MinimizeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.WindowState != FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Minimized;
+                notifyIcon1.Tag = string.Empty;
+                notifyIcon1.ShowBalloonTip(3000, this.Text,
+                     "程式並未結束，欲結束請在圖示上按右鍵，選取結束選項",
+                     ToolTipIcon.Info);
+                this.Hide();
+            }
+            // Save StudentID and password to ApplicationSettings
+            if (Properties.Settings.Default.RmbStudentID)
+                Properties.Settings.Default.StudentIDSetting = txtAcct.Text;
+            if (Properties.Settings.Default.RmbPassword)
+                Properties.Settings.Default.PasswordSetting = txtPwd.Text;
+            Properties.Settings.Default.Save();
+
+            if (Properties.Settings.Default.AutoStartup)
+                InitStartupCountdown();
+        }
+
         private void notifyIcon1_Clicked(object sender, EventArgs e)
         {
             ShowForm();

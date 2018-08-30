@@ -55,9 +55,12 @@
             this.cmsIcon = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.OptionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.偏好設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
+            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errAcct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCmb)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -289,7 +292,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.OptionToolStripMenuItem,
+            this.FileToolStripMenuItem,
             this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -297,26 +300,48 @@
             this.menuStrip1.TabIndex = 18;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // OptionToolStripMenuItem
+            // FileToolStripMenuItem
             // 
-            this.OptionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.偏好設定ToolStripMenuItem});
-            this.OptionToolStripMenuItem.Name = "OptionToolStripMenuItem";
-            this.OptionToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
-            this.OptionToolStripMenuItem.Text = "選項";
+            this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.偏好設定ToolStripMenuItem,
+            this.CloseToolStripMenuItem});
+            this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
+            this.FileToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.FileToolStripMenuItem.Text = "檔案";
             // 
             // 偏好設定ToolStripMenuItem
             // 
             this.偏好設定ToolStripMenuItem.Name = "偏好設定ToolStripMenuItem";
-            this.偏好設定ToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
+            this.偏好設定ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.偏好設定ToolStripMenuItem.Text = "偏好設定";
             this.偏好設定ToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
             // HelpToolStripMenuItem
             // 
+            this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ManualToolStripMenuItem});
             this.HelpToolStripMenuItem.Name = "HelpToolStripMenuItem";
             this.HelpToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.HelpToolStripMenuItem.Text = "說明";
+            // 
+            // ManualToolStripMenuItem
+            // 
+            this.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem";
+            this.ManualToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
+            this.ManualToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ManualToolStripMenuItem.Text = "使用說明";
+            this.ManualToolStripMenuItem.Click += new System.EventHandler(this.ManualToolStripMenuItem_Click);
+            // 
+            // helpProvider1
+            // 
+            this.helpProvider1.HelpNamespace = "C:\\Users\\TL\\source\\repos\\Autopick4NDHU\\Autopick4NDHU\\Manual\\Manual.html";
+            // 
+            // CloseToolStripMenuItem
+            // 
+            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CloseToolStripMenuItem.Text = "縮小至工具列";
+            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.MinimizeToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -335,6 +360,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Auto Pick";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -379,9 +405,12 @@
         private System.Windows.Forms.ContextMenuStrip cmsIcon;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem OptionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem FileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 偏好設定ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem HelpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ManualToolStripMenuItem;
+        private System.Windows.Forms.HelpProvider helpProvider1;
+        private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
     }
 }
 
