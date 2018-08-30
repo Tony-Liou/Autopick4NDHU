@@ -71,7 +71,7 @@
             this.btnNav.Location = new System.Drawing.Point(91, 395);
             this.btnNav.Name = "btnNav";
             this.btnNav.Size = new System.Drawing.Size(75, 23);
-            this.btnNav.TabIndex = 0;
+            this.btnNav.TabIndex = 7;
             this.btnNav.Text = "Go";
             this.btnNav.UseVisualStyleBackColor = true;
             this.btnNav.Click += new System.EventHandler(this.btnNav_Click);
@@ -105,11 +105,14 @@
             // 
             // webBrowser1
             // 
+            this.webBrowser1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.webBrowser1.Location = new System.Drawing.Point(382, 27);
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(406, 411);
-            this.webBrowser1.TabIndex = 4;
+            this.webBrowser1.TabIndex = 20;
             this.webBrowser1.TabStop = false;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
@@ -127,7 +130,7 @@
             this.btnStop.Location = new System.Drawing.Point(172, 395);
             this.btnStop.Name = "btnStop";
             this.btnStop.Size = new System.Drawing.Size(75, 23);
-            this.btnStop.TabIndex = 6;
+            this.btnStop.TabIndex = 8;
             this.btnStop.Text = "Stop";
             this.btnStop.UseVisualStyleBackColor = true;
             this.btnStop.Click += new System.EventHandler(this.btnStop_Click);
@@ -154,14 +157,14 @@
             this.txtPwd.Location = new System.Drawing.Point(99, 52);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(100, 22);
-            this.txtPwd.TabIndex = 8;
+            this.txtPwd.TabIndex = 1;
             // 
             // dtpDate
             // 
             this.dtpDate.Location = new System.Drawing.Point(76, 16);
             this.dtpDate.Name = "dtpDate";
             this.dtpDate.Size = new System.Drawing.Size(123, 22);
-            this.dtpDate.TabIndex = 9;
+            this.dtpDate.TabIndex = 2;
             // 
             // cmbStartHour
             // 
@@ -170,7 +173,7 @@
             this.cmbStartHour.Location = new System.Drawing.Point(76, 55);
             this.cmbStartHour.Name = "cmbStartHour";
             this.cmbStartHour.Size = new System.Drawing.Size(62, 20);
-            this.cmbStartHour.TabIndex = 10;
+            this.cmbStartHour.TabIndex = 3;
             this.cmbStartHour.SelectedIndexChanged += new System.EventHandler(this.cmbStartHour_SelectedIndexChanged);
             this.cmbStartHour.Validating += new System.ComponentModel.CancelEventHandler(this.cmb_Validating);
             // 
@@ -181,7 +184,7 @@
             this.cmbEndHour.Location = new System.Drawing.Point(161, 55);
             this.cmbEndHour.Name = "cmbEndHour";
             this.cmbEndHour.Size = new System.Drawing.Size(62, 20);
-            this.cmbEndHour.TabIndex = 11;
+            this.cmbEndHour.TabIndex = 4;
             // 
             // cmbSportFields
             // 
@@ -190,7 +193,7 @@
             this.cmbSportFields.Location = new System.Drawing.Point(76, 89);
             this.cmbSportFields.Name = "cmbSportFields";
             this.cmbSportFields.Size = new System.Drawing.Size(100, 20);
-            this.cmbSportFields.TabIndex = 12;
+            this.cmbSportFields.TabIndex = 5;
             this.cmbSportFields.Validating += new System.ComponentModel.CancelEventHandler(this.cmb_Validating);
             // 
             // btnSave
@@ -198,7 +201,7 @@
             this.btnSave.Location = new System.Drawing.Point(10, 395);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 13;
+            this.btnSave.TabIndex = 6;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -211,6 +214,7 @@
             this.txtShowInfo.ReadOnly = true;
             this.txtShowInfo.Size = new System.Drawing.Size(214, 66);
             this.txtShowInfo.TabIndex = 14;
+            this.txtShowInfo.TabStop = false;
             // 
             // label1
             // 

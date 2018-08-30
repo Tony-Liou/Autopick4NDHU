@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
   <asmv1:assemblyIdentity name="Autopick4NDHU.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="zh-TW" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="National_Dong_Hwa_University_logo.ico" asmv2:publisher="TL" co.v1:suiteName="Autopick4NDHU" asmv2:product="Autopick4NDHU" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <description asmv2:iconFile="NDHU_logo_32.ico" asmv2:publisher="TL" co.v1:suiteName="Autopick4NDHU" asmv2:product="Autopick4NDHU" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
     <assemblyIdentity name="Autopick4NDHU" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
@@ -44,27 +44,27 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autopick4NDHU.exe" size="29648">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Autopick4NDHU.exe" size="98256">
       <assemblyIdentity name="Autopick4NDHU" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>pu7+7hp8orBXWGVg5spkvMM3qmXOARh4WGCysyOUZeg=</dsig:DigestValue>
+        <dsig:DigestValue>4wC337GdylOhCn7ppNPP+Wzu0QAYzlt7NlJOjR0zH0Q=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
-  <file name="Autopick4NDHU.exe.config" size="1051">
+  <file name="Autopick4NDHU.exe.config" size="2113">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>GWEni31RudfZbafQBB+1Zwt2OSk09WGqhGRHMvohS3Y=</dsig:DigestValue>
+      <dsig:DigestValue>6IRC51sm/MQZmZDK+a0A1/gq0dFEpxRoz4HKg+lwM1w=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="National_Dong_Hwa_University_logo.ico" size="4286">
+  <file name="NDHU_logo_32.ico" size="4286">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />

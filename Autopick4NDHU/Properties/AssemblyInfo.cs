@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // 變更這些屬性的值即可修改組件的相關
 // 資訊。
 [assembly: AssemblyTitle("Autopick4NDHU")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Autopick Sport Fields at NDHU")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Autopick4NDHU")]

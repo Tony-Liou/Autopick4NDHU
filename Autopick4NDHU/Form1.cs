@@ -35,6 +35,7 @@ namespace Autopick4NDHU
             // button is clicked instead of one control at a time.
             this.AutoValidate = AutoValidate.Disable;
 
+            txtAcct.Select();
             if (Properties.Settings.Default.RmbStudentID)
                 txtAcct.Text = Properties.Settings.Default.StudentIDSetting;
             if (Properties.Settings.Default.RmbPassword)
@@ -78,18 +79,18 @@ namespace Autopick4NDHU
 
             // Set up the delays for the ToolTip.
             tip.AutoPopDelay = 5000;
-            tip.InitialDelay = 1000;
+            tip.InitialDelay = 500;
             tip.ReshowDelay = 500;
             // Force the ToolTip text to be displayed whether or not the form is active.
             tip.ShowAlways = true;
 
             // Set up the ToolTip text for the Button and Checkbox.
-            tip.SetToolTip(cmbStartHour, "Start hour");
-            tip.SetToolTip(cmbEndHour, "End hour");
-            tip.SetToolTip(txtShowInfo, "Show the state");
-            tip.SetToolTip(btnSave, "Save the user input");
+            tip.SetToolTip(cmbStartHour, "Starting hour");
+            tip.SetToolTip(cmbEndHour, "Ending hour");
+            tip.SetToolTip(txtShowInfo, "Show the info");
+            tip.SetToolTip(btnSave, "Save the input");
             tip.SetToolTip(btnNav, "Go to the target website and start processing");
-            tip.SetToolTip(btnStop, "Stop the process of webbrowser");
+            tip.SetToolTip(btnStop, "Stop all processes of the web browser");
 
             startupTimer = new System.Timers.Timer();
             autorunTimer = new System.Timers.Timer();
@@ -192,6 +193,29 @@ namespace Autopick4NDHU
                 "\r\nHour: " + cmbStartHour.Text + "~" + cmbEndHour.Text;
 
             isSaved = true;
+
+            InitAutorunTimer();
+        }
+
+        private void InitAutorunTimer()
+        {
+            autorunTimer.AutoReset = false;
+            autorunTimer.Elapsed += new System.Timers.ElapsedEventHandler(btnNav_Click);
+            autorunTimer.SynchronizingObject = this; // Back to the main thread when time is up
+
+            DateTime dtAuto = DateTime.Parse(Properties.Settings.Default.LoginTime);
+            TimeSpan ts;
+            if(dtAuto.CompareTo(DateTime.Now) > 0)
+            {
+                ts = dtAuto.Subtract(DateTime.Now);
+            }
+            else
+            {
+                ts = dtAuto.AddDays(1).Subtract(DateTime.Now);
+            }
+
+            autorunTimer.Interval = ts.TotalMilliseconds; // Max value of Interval is 2 to the power of 31(Int32)
+            autorunTimer.Start();
         }
 
         private void txtAcct_Validating(object sender, CancelEventArgs e)
@@ -221,6 +245,10 @@ namespace Autopick4NDHU
         {
             webBrowser1.Navigate(Global.MAIN_URL);
             stop = false;
+            if(autorunTimer.Enabled)
+            {
+                autorunTimer.Stop();
+            }
         }
 
         private void cmb_Validating(object sender, CancelEventArgs e)
@@ -270,7 +298,19 @@ namespace Autopick4NDHU
             startupTimer.AutoReset = false;
             startupTimer.Elapsed += new System.Timers.ElapsedEventHandler(ShowForm);
             startupTimer.SynchronizingObject = this; // Back to the main thread when time is up
-            startupTimer.Interval = DateTime.Parse(Properties.Settings.Default.TestTime).Subtract(DateTime.Now).TotalMilliseconds; // less than 24 days
+
+            DateTime dtStart = DateTime.Parse(Properties.Settings.Default.StartupTime);
+            TimeSpan ts;
+            if (dtStart.CompareTo(DateTime.Now) > 0)
+            {
+                ts = dtStart.Subtract(DateTime.Now);
+            }
+            else
+            {
+                ts = dtStart.AddDays(1).Subtract(DateTime.Now);
+            }
+
+            startupTimer.Interval = ts.TotalMilliseconds; // less than 24 days
             startupTimer.Start();
         }
 
@@ -288,7 +328,7 @@ namespace Autopick4NDHU
             }
             // Activate the form.
             this.Activate();
-            this.Focus();
+            //this.Focus();
         }
 
         /// <summary>
@@ -305,16 +345,19 @@ namespace Autopick4NDHU
                 WindowState = FormWindowState.Normal;
             }
             this.Activate();
-            this.Focus();
+            //this.Focus();
             startupTimer.Stop();
         }
 
         /// <summary>
         /// Context menu strip's End the window
+        /// Stop timers
         /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+            startupTimer.Stop();
+            autorunTimer.Stop();
             Application.Exit();
         }
 

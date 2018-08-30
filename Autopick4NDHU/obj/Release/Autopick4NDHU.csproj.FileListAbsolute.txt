@@ -12,3 +12,6 @@ C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Release\Autopick4NDHU.a
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Release\Autopick4NDHU.exe
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Release\Autopick4NDHU.pdb
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Release\Autopick4NDHU.csprojAssemblyReference.cache
+C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Release\Autopick4NDHU.FormSettings.resources
+C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\bin\Release\Autopick4NDHU.exe.CodeAnalysisLog.xml
+C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\bin\Release\Autopick4NDHU.exe.lastcodeanalysissucceeded

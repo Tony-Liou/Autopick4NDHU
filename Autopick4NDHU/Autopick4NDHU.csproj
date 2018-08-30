@@ -51,11 +51,11 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>NDHU_logo_32.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ManifestCertificateThumbprint>3571D1C5B68633CF47939D3A9579B25AA6E54C26</ManifestCertificateThumbprint>
@@ -141,7 +141,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="NDHU_logo_32.ico" />
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Images\NDHU_logo_32.ico" />
     <EmbeddedResource Include="Images\NDHU_logo_256.ico" />
