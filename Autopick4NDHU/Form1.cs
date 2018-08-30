@@ -21,6 +21,8 @@ namespace Autopick4NDHU
         private bool isSaved; // Clicked save button
         private bool isBooked; // Booked the sport field
         private bool isFinished; // Submitted the request website
+        private bool isAutostartup;
+        private bool isAutobook;
         System.Timers.Timer startupTimer, autorunTimer;
 
         public Form1()
@@ -96,6 +98,8 @@ namespace Autopick4NDHU
             autorunTimer = new System.Timers.Timer();
 
             stop = isSaved = isBooked = isFinished = false;
+            isAutostartup = Properties.Settings.Default.AutoStartup;
+            isAutobook = Properties.Settings.Default.AutoBook;
         }
 
         private ComboItem SFSplit(string str)
@@ -290,7 +294,8 @@ namespace Autopick4NDHU
                 Properties.Settings.Default.PasswordSetting = txtPwd.Text;
             Properties.Settings.Default.Save();
 
-            InitStartupCountdown();
+            if(Properties.Settings.Default.AutoStartup)
+                InitStartupCountdown();
         }
 
         private void InitStartupCountdown()
@@ -372,7 +377,23 @@ namespace Autopick4NDHU
             if(form.ShowDialog() == DialogResult.OK)
             {
                 Properties.Settings.Default.Reload();
-                MessageBox.Show("Saved");
+                if(Properties.Settings.Default.AutoStartup != isAutostartup)
+                {
+                    isAutostartup = !isAutostartup;
+                    if(!isAutostartup)
+                    {
+                        startupTimer.Stop();
+                    }
+                }
+                if(Properties.Settings.Default.AutoBook != isAutobook)
+                {
+                    isAutobook = !isAutobook;
+                    if(!isAutobook)
+                    {
+                        autorunTimer.Stop();
+                    }
+                }
+                //MessageBox.Show("Saved");
             }
         }
 
