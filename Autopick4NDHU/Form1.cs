@@ -24,7 +24,6 @@ namespace Autopick4NDHU
         private bool isAutostartup;
         private bool isAutobook;
         System.Timers.Timer startupTimer, autorunTimer;
-        RecordManipulation recMan;
 
         public Form1()
         {
@@ -185,32 +184,11 @@ namespace Autopick4NDHU
                 return;
             }
 
-            Record rec = new Record()
-            {
-                Date = dtpDate.Value.ToString("yyyy-MM-dd"),
-                StartHour = Int32.Parse(cmbStartHour.Text),
-                EndHour = Int32.Parse(cmbEndHour.Text),
-                StudentID = txtAcct.Text,
-                Pwd = txtPwd.Text,
-                SF = ((ComboItem)cmbSportFields.SelectedItem).Value
-            };
-
-            if(recMan == null)
-                recMan = new RecordManipulation();
-            recMan.rec = rec;
-            if (recMan.Insert())
-            {
-                MessageBox.Show("Saved successfully!" + rec.Date);
-            }
-            else
-            {
-                MessageBox.Show("Save error: Duplicated");
-            }
-            /*wbsControl.Acct = txtAcct.Text;
+            wbsControl.Acct = txtAcct.Text;
             wbsControl.Pwd = txtPwd.Text;
             wbsControl.SFValue = ((ComboItem)cmbSportFields.SelectedItem).Value;
             wbsControl.Date = dtpDate.Text;
-            wbsControl.Hour = cmbStartHour.Text + "~" + cmbEndHour.Text;*/
+            wbsControl.Hour = cmbStartHour.Text + "~" + cmbEndHour.Text;
 
             txtShowInfo.Text = "ID: " + txtAcct.Text +
                 "\r\nPassword: " + txtPwd.Text +
@@ -218,9 +196,9 @@ namespace Autopick4NDHU
                 "\r\nDate: " + dtpDate.Text +
                 "\r\nHour: " + cmbStartHour.Text + "~" + cmbEndHour.Text;
 
-            //isSaved = true;
+            isSaved = true;
 
-            //InitAutorunTimer();
+            InitAutorunTimer();
         }
 
         private void InitAutorunTimer()
@@ -444,12 +422,6 @@ namespace Autopick4NDHU
 
             if (Properties.Settings.Default.AutoStartup)
                 InitStartupCountdown();
-        }
-
-        private void 借場紀錄ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ReservationRecord form = ReservationRecord.GetInstance();
-            form.Show();
         }
 
         private void notifyIcon1_Clicked(object sender, EventArgs e)
