@@ -57,10 +57,12 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.偏好設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.檢視ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.借場紀錄ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errAcct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCmb)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -293,6 +295,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.FileToolStripMenuItem,
+            this.檢視ToolStripMenuItem,
             this.HelpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -316,6 +319,13 @@
             this.偏好設定ToolStripMenuItem.Text = "偏好設定";
             this.偏好設定ToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
             // 
+            // CloseToolStripMenuItem
+            // 
+            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CloseToolStripMenuItem.Text = "縮小至工具列";
+            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.MinimizeToolStripMenuItem_Click);
+            // 
             // HelpToolStripMenuItem
             // 
             this.HelpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -328,7 +338,7 @@
             // 
             this.ManualToolStripMenuItem.Name = "ManualToolStripMenuItem";
             this.ManualToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F1;
-            this.ManualToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ManualToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.ManualToolStripMenuItem.Text = "使用說明";
             this.ManualToolStripMenuItem.Click += new System.EventHandler(this.ManualToolStripMenuItem_Click);
             // 
@@ -336,12 +346,20 @@
             // 
             this.helpProvider1.HelpNamespace = "C:\\Users\\TL\\source\\repos\\Autopick4NDHU\\Autopick4NDHU\\Manual\\Manual.html";
             // 
-            // CloseToolStripMenuItem
+            // 檢視ToolStripMenuItem
             // 
-            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
-            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.CloseToolStripMenuItem.Text = "縮小至工具列";
-            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.MinimizeToolStripMenuItem_Click);
+            this.檢視ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.借場紀錄ToolStripMenuItem});
+            this.檢視ToolStripMenuItem.Name = "檢視ToolStripMenuItem";
+            this.檢視ToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.檢視ToolStripMenuItem.Text = "檢視";
+            // 
+            // 借場紀錄ToolStripMenuItem
+            // 
+            this.借場紀錄ToolStripMenuItem.Name = "借場紀錄ToolStripMenuItem";
+            this.借場紀錄ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.借場紀錄ToolStripMenuItem.Text = "借場紀錄";
+            this.借場紀錄ToolStripMenuItem.Click += new System.EventHandler(this.借場紀錄ToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -411,6 +429,8 @@
         private System.Windows.Forms.ToolStripMenuItem ManualToolStripMenuItem;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 檢視ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 借場紀錄ToolStripMenuItem;
     }
 }
 
