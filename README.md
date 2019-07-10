@@ -12,6 +12,10 @@ Windows Form app for one-click book the sport fields
 
 P.S. Stop button can stop the process in the webbbrowser (and restart by clicking Go button)
 
+## Features(development phase)
+
+Add a database to review the booking history and pre-booking a lot of fields
+
 ## Portable exe file
 
-Download the [files](Autopick4NDHU/bin/Release) and you can use it without setup on your computer. 
+Download the [files](Autopick4NDHU/bin/Release) and you can use it without installation. 
