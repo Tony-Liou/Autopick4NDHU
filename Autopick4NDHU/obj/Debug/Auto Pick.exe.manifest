@@ -44,14 +44,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Auto Pick.exe" size="111056">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Auto Pick.exe" size="110080">
       <assemblyIdentity name="Auto Pick" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>sxZ5kf3rt5nb4MXtXv2+6aDxMcwuYPhVfkfAtAfwrCs=</dsig:DigestValue>
+        <dsig:DigestValue>/ljeZq4YTccckjNx0pceJxT6HTdHXQr+FaldQEgGjRU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

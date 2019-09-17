@@ -24,3 +24,29 @@ C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLit
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLite.dll.config
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.ReservationRecord.resources
 C:\Users\TL\source\repos\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.csproj.CopyComplete
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\Auto Pick.exe.config
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\Auto Pick.exe.manifest
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\Auto Pick.application
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\Auto Pick.exe
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\Auto Pick.pdb
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\EntityFramework.dll
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\EntityFramework.SqlServer.dll
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLite.dll
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLite.EF6.dll
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLite.Linq.dll
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\EntityFramework.xml
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\EntityFramework.SqlServer.xml
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLite.xml
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\bin\Debug\System.Data.SQLite.dll.config
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.csprojAssemblyReference.cache
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.Form1.resources
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.FormSettings.resources
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.Properties.Resources.resources
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.ReservationRecord.resources
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.csproj.GenerateResource.cache
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.csproj.CoreCompileInputs.cache
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Auto Pick.exe.manifest
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Auto Pick.application
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Autopick4NDHU.csproj.CopyComplete
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Auto Pick.exe
+D:\Tony L\Documents\Autopick4NDHU\Autopick4NDHU\obj\Debug\Auto Pick.pdb
