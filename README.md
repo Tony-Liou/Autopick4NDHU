@@ -1,10 +1,10 @@
 # Autopick4NDHU
 
-Windows Form app for one-click book the sport fields
+A Windows Form app for one-click booking the sport fields
 
 ## Manual
 
-![alt screenshot](https://github.com/Tony-Liou/Autopick4NDHU/blob/master/screenshot.png)
+![alt screenshot](screenshot.png)
 
 1. Input all the box
 1. Click the save button

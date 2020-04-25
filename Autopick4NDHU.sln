@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autopick4NDHU", "Autopick4NDHU\Autopick4NDHU.csproj", "{3EC136AB-17A3-4A09-9BE4-01B18C3FF71A}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Autopick_Setup", "..\Autopick_Setup\Autopick_Setup\Autopick_Setup.vdproj", "{030A7D11-6901-4917-B0C2-4059BACB4040}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyFormsCore", "MyFormsCore\MyFormsCore.csproj", "{86EAEFC7-6AD5-4DBB-AB72-B639E3F38FA4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3EC136AB-17A3-4A09-9BE4-01B18C3FF71A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3EC136AB-17A3-4A09-9BE4-01B18C3FF71A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3EC136AB-17A3-4A09-9BE4-01B18C3FF71A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{030A7D11-6901-4917-B0C2-4059BACB4040}.Debug|Any CPU.ActiveCfg = Debug
-		{030A7D11-6901-4917-B0C2-4059BACB4040}.Debug|Any CPU.Build.0 = Debug
-		{030A7D11-6901-4917-B0C2-4059BACB4040}.Release|Any CPU.ActiveCfg = Release
-		{030A7D11-6901-4917-B0C2-4059BACB4040}.Release|Any CPU.Build.0 = Release
+		{86EAEFC7-6AD5-4DBB-AB72-B639E3F38FA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86EAEFC7-6AD5-4DBB-AB72-B639E3F38FA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86EAEFC7-6AD5-4DBB-AB72-B639E3F38FA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86EAEFC7-6AD5-4DBB-AB72-B639E3F38FA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

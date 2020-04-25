@@ -57,10 +57,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.FileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.偏好設定ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.HelpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ManualToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpProvider1 = new System.Windows.Forms.HelpProvider();
-            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.QuitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errAcct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errCmb)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -304,7 +305,8 @@
             // 
             this.FileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.偏好設定ToolStripMenuItem,
-            this.CloseToolStripMenuItem});
+            this.CloseToolStripMenuItem,
+            this.QuitToolStripMenuItem});
             this.FileToolStripMenuItem.Name = "FileToolStripMenuItem";
             this.FileToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
             this.FileToolStripMenuItem.Text = "檔案";
@@ -315,6 +317,13 @@
             this.偏好設定ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.偏好設定ToolStripMenuItem.Text = "偏好設定";
             this.偏好設定ToolStripMenuItem.Click += new System.EventHandler(this.SettingsToolStripMenuItem_Click);
+            // 
+            // CloseToolStripMenuItem
+            // 
+            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CloseToolStripMenuItem.Text = "縮小至工具列";
+            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.MinimizeToolStripMenuItem_Click);
             // 
             // HelpToolStripMenuItem
             // 
@@ -334,14 +343,14 @@
             // 
             // helpProvider1
             // 
-            this.helpProvider1.HelpNamespace = "C:\\Users\\TL\\source\\repos\\Autopick4NDHU\\Autopick4NDHU\\Manual\\Manual.html";
+            this.helpProvider1.HelpNamespace = "https://github.com/Tony-Liou/Autopick4NDHU/tree/master/Autopick4NDHU/Manual";
             // 
-            // CloseToolStripMenuItem
+            // QuitToolStripMenuItem
             // 
-            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
-            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.CloseToolStripMenuItem.Text = "縮小至工具列";
-            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.MinimizeToolStripMenuItem_Click);
+            this.QuitToolStripMenuItem.Name = "QuitToolStripMenuItem";
+            this.QuitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.QuitToolStripMenuItem.Text = "結束";
+            this.QuitToolStripMenuItem.Click += new System.EventHandler(this.QuitToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -411,6 +420,7 @@
         private System.Windows.Forms.ToolStripMenuItem ManualToolStripMenuItem;
         private System.Windows.Forms.HelpProvider helpProvider1;
         private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem QuitToolStripMenuItem;
     }
 }
 
