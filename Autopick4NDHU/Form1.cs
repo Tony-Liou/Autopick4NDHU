@@ -209,7 +209,7 @@ namespace Autopick4NDHU
             }
 
 
-            wbsControl.setParams(
+            wbsControl.SetParams(
                 txtAcct.Text,
                 txtPwd.Text,
                 ((KeyValuePair<string, string>)cmbSportFields.SelectedItem).Key,
@@ -380,7 +380,7 @@ namespace Autopick4NDHU
                 WindowState = FormWindowState.Normal;
             }
             this.Activate();
-            //this.Focus();
+            
             startupTimer.Stop();
         }
 
@@ -388,7 +388,7 @@ namespace Autopick4NDHU
         /// Context menu strip's End the window
         /// Stop timers
         /// </summary>
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
             startupTimer.Stop();
@@ -446,10 +446,12 @@ namespace Autopick4NDHU
             SaveActAndPwd();
 
             if (Properties.Settings.Default.AutoStartup)
+            {
                 InitStartupCountdown();
+            }
         }
 
-        private void notifyIcon1_Clicked(object sender, EventArgs e)
+        private void NotifyIcon1_Clicked(object sender, EventArgs e)
         {
             ShowForm();
         }
@@ -482,7 +484,7 @@ namespace Autopick4NDHU
         class WbsController
         {
             public string reason = "Reason";
-            private int count = 0;
+            private int count;
 
             public WebBrowser Wbs { get; set; }
 
@@ -497,7 +499,7 @@ namespace Autopick4NDHU
                 Wbs = wbs;
             }
 
-            public void setParams(string acct, string pwd, string SF, string date, string hr)
+            public void SetParams(string acct, string pwd, string SF, string date, string hr)
             {
                 Acct = acct;
                 Pwd = pwd;
@@ -536,7 +538,7 @@ namespace Autopick4NDHU
 
             public void FillReason()
             {
-                getById("MainContent_ReasonTextBox" + ++count).InnerText = reason;
+                getById("MainContent_ReasonTextBox" + (++count).ToString()).InnerText = reason;
                 getById("MainContent_Button4").InvokeMember("click");
             }
         }

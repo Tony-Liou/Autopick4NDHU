@@ -273,8 +273,8 @@
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
             this.notifyIcon1.Text = "Auto Pick";
             this.notifyIcon1.Visible = true;
-            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.notifyIcon1_Clicked);
-            this.notifyIcon1.DoubleClick += new System.EventHandler(this.notifyIcon1_Clicked);
+            this.notifyIcon1.BalloonTipClicked += new System.EventHandler(this.NotifyIcon1_Clicked);
+            this.notifyIcon1.DoubleClick += new System.EventHandler(this.NotifyIcon1_Clicked);
             // 
             // cmsIcon
             // 
@@ -288,7 +288,7 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // menuStrip1
             // 
