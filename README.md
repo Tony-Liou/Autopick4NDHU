@@ -20,4 +20,4 @@ Add a database(SQLite) to review the booking history and pre-booking a lot of fi
 
 ## Portable exe file
 
-Download the [program](../../../releases), then you can use it without installation. 
+Download the [program](../../releases), then you can use it without installation. 
